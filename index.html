@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Cards Fetching Apps</title>
+    <script src="http://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-orange-50 to-red-50  main-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-4">
+            <h1 class="text-4xl font-bold text-blue-950 mb-2">
+                🍽️ World Food Explorer
+            </h1>
+            <p class="text-gray-600 text-lg">
+                Discover delicious meals from around the world
+            </p>
+        </div>
+        <div class="max-w-md mx-auto mb-8">
+            <div class="bg-gray-50 rounded-lg shadow-lg p-6">
+                <label for="CountryInput" class="block text-sm font-medium text-gray-700 mb-2">
+                    Enter Country Name
+                </label>
+
+                <div class="flex gap-3">
+                    <input type="text" id="countryInput" placeholder="e.g., Canadian, Indian, Chinese ..."
+                        class="flex-1 px-4 py-3 border border-gray-400 rounded-lg focus:ring-1 focus:ring-orange-400 focus:border-transparent outline-none transition-all">
+                    <button id="searchBtn"
+                        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 flex items-center gap-2">
+                        🔍 search
+                    </button>
+                </div>
+
+                <div class=" mt-3 text-sm text-gray-500">
+
+                    <p>
+                        <strong>Popular countries:</strong> American, British, Canadian, Chinese, French, Indian,
+                        Italian, Japanese, Maxican, Thai
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingSpinner" class="hidden flex justify-center items-center py-12">
+            <div class="loading-spinner">
+                <span class="ml-3 text-gray-600 font-medium">
+                    Fething delicious meals ...
+                </span>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="hidden max-w-md mx-auto mb-8">
+            <div class="text-red-600 font-medium mb-1"> ❌ No meals found
+            </div>
+            <div class="text-red-600 font-medium mb-1"> Try a different country name or check your spelling
+            </div>
+        </div>
+
+        <div id="resultsCounter" class="hidden text-center mb-6">
+            <div class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">
+                <span id="countText">
+
+                </span>
+            </div>
+        </div>
+
+        <div id="cardsContainer"
+            class="grid grid-color-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        </div>
+    </div>
+    </div>
+       <script src="script.js"></script>
+
+</body>
+
+</html>
